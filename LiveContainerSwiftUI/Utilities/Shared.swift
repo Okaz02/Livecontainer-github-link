@@ -4,6 +4,8 @@ struct LCPath {
     static let docPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     static let bundlePath = docPath.appendingPathComponent("Applications")
     static let dataPath = docPath.appendingPathComponent("Data/Application")
+    static let tweakPath = docPath.appendingPathComponent("Tweaks")
+
 }
 
 extension String: @retroactive Error {}
