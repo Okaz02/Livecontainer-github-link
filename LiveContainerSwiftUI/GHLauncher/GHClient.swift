@@ -1,8 +1,7 @@
 import Foundation
 import Security
 
-// Device Flow を有効にした GitHub OAuth App の Client ID
-let GH_CLIENT_ID = "YOUR_OAUTH_APP_CLIENT_ID"
+let GH_CLIENT_ID = "Ov23lilj4ZETp4OibcSu"
 
 // MARK: - トークン（Keychain）
 
