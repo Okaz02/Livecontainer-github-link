@@ -87,6 +87,10 @@ func ghLaunch(relativePath: String) async throws {
     }
     if let signError { throw signError.loc }
 
+    // 再起動後に中核が Tweaks/TweakLoader.dylib のシンボリックリンクを張る。フォルダがないと張れず、
+    // 署名時に注入した @loader_path/../../Tweaks/TweakLoader.dylib が見つからずに起動が止まる
+    try FileManager.default.createDirectory(at: LCPath.tweakPath, withIntermediateDirectories: true)
+
     UserDefaults.standard.set(relativePath, forKey: "selected")
     UserDefaults.standard.set(info.dataUUID, forKey: "selectedContainer")
     if #available(iOS 26.0, *) {
